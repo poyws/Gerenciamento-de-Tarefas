@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <base href="https://arastorage.com"> 
+    <title>Sistema de Gerenciamento de Tarefas Colaborativo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <h1>TaskFlow</h1>
+        <p>Sistema de Gerenciamento de Tarefas Colaborativo</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="actions">
+        <button class="btn btn-primary" onclick="showNewTaskModal()">Nova Tarefa</button>
+    </div>
+
+    <div class="task-grid" id="taskGrid"></div>
+
+    <div class="calendar">
+        <h2>Calendário de Tarefas</h2>
+        <div id="calendar"></div>
+    </div>
+</div>
+
+<div class="modal" id="newTaskModal">
+    <div class="modal-content">
+        <h2>Nova Tarefa</h2>
+        <form id="newTaskForm">
+            <div class="form-group">
+                <label>Título</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea name="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Responsável</label>
+                <input type="text" name="assignee" required>
+            </div>
+            <div class="form-group">
+                <label>Prazo</label>
+                <input type="date" name="dueDate" required>
+            </div>
+            <div class="form-group">
+                <label>Prioridade</label>
+                <select name="priority" required>
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Criar Tarefa</button>
+            <button type="button" class="btn" onclick="hideNewTaskModal()">Cancelar</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
